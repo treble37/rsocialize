@@ -34,17 +34,17 @@ Or install it yourself as:
 
 At the command prompt:
 
-`rails g rsocialize:install example1
+```rails g rsocialize:install example1
 
 This will install the required sharrre jQuery code and the Example 1 CSS into your app/assets directory.  It will also create a route in your routes.rb file and a controller file.  This part is "auto-magic" and done for you.
 
 Now in your view(s) file or on whatever page you want the social media buttons to appear, you need to use the following 2 helper functions:
 
-`rsocialize_div_tag("", {:css_template=>"example1"})
+```rsocialize_div_tag("", {:css_template=>"example1"})
 
 The *_div_tag helper outputs the necessary css for sharrre's Example 1. 
 
-`rsocialize_js_tag({:js_template=>"example1"})
+```rsocialize_js_tag({:js_template=>"example1"})
 
 The *_js_tag helper outputs the necessary jQuery Code for sharrre's Example 1.
 

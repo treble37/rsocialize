@@ -12,7 +12,7 @@ This is a "beta" release.  There's been some minimal testing with rspec.  In the
 
 #Rails compatibility
 
-I wrote this gem and tested it with Rails 3.2.8.  I'm thinking about making it compatible with other versions of rails, so if you're interested in this happening, let me know via the issue queue.
+I wrote this gem and tested it with Rails 3.2.8. It takes advantage of the asset pipeline.  I'm thinking about making it compatible with other versions of rails, so if you're interested in this happening, let me know via the issue queue.
 
 ## Installation
 
@@ -30,11 +30,11 @@ Or install it yourself as:
 
 ## Basic Usage
 
-###Installation
+###Installation w/your rails application
 
 At the command prompt:
 
-```rails g rsocialize:install example1
+`rails g rsocialize:install example1`
 
 This will install the required sharrre jQuery code and the Example 1 CSS into your app/assets directory.  It will also create a route in your routes.rb file and a controller file.  This part is "auto-magic" and done for you.
 
@@ -49,6 +49,11 @@ The *_div_tag helper outputs the necessary css for sharrre's Example 1.
 The *_js_tag helper outputs the necessary jQuery Code for sharrre's Example 1.
 
 You would use "example2", "example3", etc. as an argument to each helper if you wanted the Example 2, Example 3, etc. style buttons to be used.
+
+###Uninstalling from your rails application
+At the command prompt:
+
+`rails g rsocialize:uninstall`
 
 ## Advanced Usage with Custom Options
 
@@ -94,7 +99,11 @@ You would then call the following in your view:
 The *custom* option essentially tells the *_div_tag helper to return whatever html markup you pass in.
 
 ###For step 3 - overwrite the css code in the rsocialize.css file for any custom css styling you want to be applied
-This is pretty straightforward.  If you don't like the default css (or whatever option you installed), overwrite it.
+This is pretty straightforward.  If you don't like the default css (or whatever option you installed), you can overwrite via copy/paste or you can use the *switch_css* command.  To use the *switch_css* command:
+
+`rails g rsocialize:switch_css example2`
+
+Note that the argument "example2" refers to the "example2css.txt" file in the "app/assets/stylesheets" directory.  If you have your own custom css file that you want to switch in and out, you can always create your own text file in the "app/assets/stylesheets" directory.  The file should be named according to the convention *css.txt, where * = any bunch of characters.
 
 ## Contributing
 

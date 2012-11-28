@@ -251,4 +251,61 @@ $('#googleplus').sharrre({
       @return_html_code.tr("\n","").tr(" ","").should == @div_example6.tr("\n","").tr(" ","")
     end
   end #context example 6
+  context "with CUSTOM_OPTIONS" do
+    before(:each) do
+      @custom_div = %Q{
+        <div id="demo1" data-url="http://sharrre.com" data-text="Make your sharing widget with Sharrre (jQuery Plugin)" data-title="share"></div>
+      }
+      @js_custom_options = {
+        demo1: {
+          share: {
+              googlePlus: true,
+              facebook: true,
+              twitter: true
+            },
+            buttons: {
+              googlePlus: {size: 'tall'},
+              facebook: {layout: 'box_count'},
+              twitter: {count: 'vertical', via: '_JulienH'}
+            },
+            hover: %Q[function(api, options){
+              $(api.element).find('.buttons').show();
+            }],
+            hide: %Q[function(api, options){
+              $(api.element).find('.buttons').hide();
+            }],
+            enableTracking: true
+          }
+      }
+      @js_code_custom_example = %Q[
+        $('#demo1').sharrre({
+          share: {
+            googlePlus: true,
+            facebook: true,
+            twitter: true
+          },
+          buttons: {
+            googlePlus: {size: 'tall'},
+            facebook: {layout: 'box_count'},
+            twitter: {count: 'vertical', via: '_JulienH'}
+          },
+          hover: function(api, options){
+            $(api.element).find('.buttons').show();
+          },
+          hide: function(api, options){
+            $(api.element).find('.buttons').hide();
+          },
+          enableTracking: true
+        });
+    ]
+      it "should return sharrre jQuery code" do
+        @return_js_code = @dumb_class.rsocialize_js_tag(@js_custom_options)
+        @return_js_code.tr("\n","").tr(" ","").should == @js_code_custom_example.tr("\n","").tr(" ","")
+      end
+      it "should return html div code" do
+        @return_html_code = @dumb_class.rsocialize_div_tag(@custom_div,:css_template=>"custom")
+        @return_html_code.tr("\n","").tr(" ","").should == @custom_div.tr("\n","").tr(" ","")
+      end
+    end
+  end #context custom options
 end #describe rsocialize

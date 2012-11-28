@@ -65,7 +65,6 @@ To use social buttons different than what is pre-loaded with the examples, you h
 ###For step 1 - example of specifying the hash of options
 ```ruby
 @js_custom_options = {
-   
    demo1: {
           share: {
               googlePlus: true,
@@ -92,9 +91,11 @@ You would then call the following in your view:
 `<%= rsocialize_js_tag(@js_custom_options) %>`
 
 ###For step 2 - example of specifying own html `<div>` markup for the jQuery code to operate on
- `@custom_div = %Q{
+```ruby
+ @custom_div = %Q{
         <div id="demo1" data-url="http://sharrre.com" data-text="Make your sharing widget with Sharrre (jQuery Plugin)" data-title="share"></div>
-     }`
+     }
+````
      
 You would then call the following in your view:
 `rsocialize_div_tag(@custom_div,:div_template=>"custom") %>`

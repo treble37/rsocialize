@@ -170,6 +170,8 @@ module Rsocialize
   end
   def rsocialize_js_tag(options={})
     case options[:js_template]
+    when "example1"
+      options = EXAMPLE1_JS_OPTIONS
     when "example2"
       options = EXAMPLE2_JS_OPTIONS
     when "example3"
@@ -178,8 +180,6 @@ module Rsocialize
       options = EXAMPLE5_JS_OPTIONS
     when "example6"
       options = EXAMPLE6_JS_OPTIONS
-    else #example1 set by default
-      options = EXAMPLE1_JS_OPTIONS
     end
     options=options.merge(options)
     

@@ -8,7 +8,7 @@ This gem is ideal for one-person (or severely time-pressed) startups who are tim
 
 #Rsocialize v0.0.1 - What's working?
 
-This is a "beta" release.  There's been some minimal testing with rspec.  In the current version, I have examples 1,2,3,5 and 6 from the sharrre plugin working in Rails.  I am working on letting users add their own custom css and specify their own sharrre options to use different buttons than the ones given in examples 1,2,3,5,6.
+This is a "beta" release.  There's been some minimal testing with rspec.  In the current version, I have examples 1,2,3,5 and 6 from the sharrre plugin working in Rails.  Users can use their own custom css and specify their own sharrre options to use different buttons than the ones given in examples 1,2,3,5,6.
 
 #Rails compatibility
 

@@ -117,13 +117,13 @@ module Rsocialize
     options = {:facebook=>{:url=>"http://sharrre.com/", :text=>"Make your sharing widget with Sharrre (jQuery Plugin)", :title=>"Like"},
       :googleplus=>{:url=>"http://sharrre.com/", :text=>"Make your sharing widget with Sharrre (jQuery Plugin)", :title=>"+1"},
       :twitter=>{:url=>"http://sharrre.com/", :text=>"Make your sharing widget with Sharrre (jQuery Plugin)", :title=>"Tweet"},
-     :css_template=>"example1", :url=>"http://sharrre.com/", :text=>"Make your sharing widget with Sharrre (jQuery Plugin)", :title=>"share this page"}.merge(options)
+     :div_template=>"example1", :url=>"http://sharrre.com/", :text=>"Make your sharing widget with Sharrre (jQuery Plugin)", :title=>"share this page"}.merge(options)
   
     data_url = options[:url]
     data_text = options[:text]
     data_title = options[:title]
     div_str = "".html_safe
-    case options[:css_template]
+    case options[:div_template]
     when "example1"
       div_str = %Q{
         <div id="example1">
@@ -134,7 +134,7 @@ module Rsocialize
       }.html_safe
     when "example2", "example5"
       div_str = %Q{
-        <div id="#{options[:css_template]}">
+        <div id="#{options[:div_template]}">
           <div id="shareme" data-url="#{data_url}" data-text="#{data_text}"></div>
         </div>
       }.html_safe
@@ -155,7 +155,7 @@ module Rsocialize
     else #assume empty or custom
       if (div_tag_str.empty?) #use template <div>
        div_str = %Q{
-        <div id="#{options[:css_template]}">
+        <div id="#{options[:div_template]}">
           <div id="twitter" data-url="#{data_url}" data-text="#{data_text}" data-title="Tweet"></div>
           <div id="facebook" data-url="#{data_url}" data-text="#{data_text}" data-title="Like"></div>
           <div id="googleplus" data-url="#{data_url}" data-text="#{data_text}" data-title="+1"></div>

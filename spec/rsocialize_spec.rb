@@ -53,7 +53,7 @@ $('#googleplus').sharrre({
       @return_js_code.tr("\n","").tr(" ","").should == @js_code_example1.tr("\n","").tr(" ","")
     end
     it "should return html div code" do
-      @return_html_code = @dumb_class.rsocialize_div_tag("",:css_template=>"example1")
+      @return_html_code = @dumb_class.rsocialize_div_tag("",:div_template=>"example1")
       @return_html_code.tr("\n","").tr(" ","").should == @div_example1.tr("\n","").tr(" ","")
     end
   end #context example 1
@@ -97,7 +97,7 @@ $(document).ready(function() { $('#shareme').sharrre({
       @return_js_code.tr("\n","").tr(" ","").should == @js_code_example2.tr("\n","").tr(" ","")
     end
     it "should return html div code" do
-      @return_html_code = @dumb_class.rsocialize_div_tag("",:css_template=>"example2")
+      @return_html_code = @dumb_class.rsocialize_div_tag("",:div_template=>"example2")
       @return_html_code.tr("\n","").tr(" ","").should == @div_example2.tr("\n","").tr(" ","")
     end
   end #context example 2
@@ -141,7 +141,7 @@ $(document).ready(function() { $('#shareme').sharrre({
       @return_js_code.tr("\n","").tr(" ","").should == @js_code_example3.tr("\n","").tr(" ","")
     end
     it "should return html div code" do
-      @return_html_code = @dumb_class.rsocialize_div_tag("",:css_template=>"example3")
+      @return_html_code = @dumb_class.rsocialize_div_tag("",:div_template=>"example3")
       @return_html_code.tr("\n","").tr(" ","").should == @div_example3.tr("\n","").tr(" ","")
     end
   end #context example 3
@@ -187,7 +187,7 @@ $(document).ready(function() { $('#shareme').sharrre({
       @return_js_code.tr("\n","").tr(" ","").should == @js_code_example5.tr("\n","").tr(" ","")
     end
     it "should return html div code" do
-      @return_html_code = @dumb_class.rsocialize_div_tag("",:css_template=>"example5")
+      @return_html_code = @dumb_class.rsocialize_div_tag("",:div_template=>"example5")
       @return_html_code.tr("\n","").tr(" ","").should == @div_example5.tr("\n","").tr(" ","")
     end
   end #context example 5
@@ -247,7 +247,7 @@ $('#googleplus').sharrre({
       @return_js_code.tr("\n","").tr(" ","").should == @js_code_example6.tr("\n","").tr(" ","")
     end
     it "should return html div code" do
-      @return_html_code = @dumb_class.rsocialize_div_tag("",:css_template=>"example6")
+      @return_html_code = @dumb_class.rsocialize_div_tag("",:div_template=>"example6")
       @return_html_code.tr("\n","").tr(" ","").should == @div_example6.tr("\n","").tr(" ","")
     end
   end #context example 6
@@ -309,7 +309,7 @@ $('#googleplus').sharrre({
         @return_js_code.tr("\n","").tr(" ","").should == @js_code_custom_example.tr("\n","").tr(" ","")
       end
       it "should return html div code" do
-        @return_html_code = @dumb_class.rsocialize_div_tag(@custom_div,:css_template=>"custom")
+        @return_html_code = @dumb_class.rsocialize_div_tag(@custom_div,:div_template=>"custom")
         @return_html_code.tr("\n","").tr(" ","").should == @custom_div.tr("\n","").tr(" ","")
       end
   end #context custom options

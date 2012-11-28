@@ -91,7 +91,10 @@ You would then call the following in your view:
 You would then call the following in your view:
 `rsocialize_div_tag(@custom_div,:div_template=>"custom") %>`
 
-###For step 3 - verwrite the css code in the rsocialize.css file for any custom css styling you want to be applied
+The *custom* option essentially tells the *_div_tag helper to return whatever html markup you pass in.
+
+###For step 3 - overwrite the css code in the rsocialize.css file for any custom css styling you want to be applied
+This is pretty straightforward.  If you don't like the default css (or whatever option you installed), overwrite it.
 
 ## Contributing
 

@@ -63,7 +63,7 @@ To use social buttons different than what is pre-loaded with the examples, you h
 3.  Overwrite the css code in the rsocialize.css file for any custom css styling you want to be applied
 
 ###For step 1 - example of specifying the hash of options
-`@js_custom_options = {
+```@js_custom_options = {
         demo1: {
           share: {
               googlePlus: true,
@@ -83,7 +83,7 @@ To use social buttons different than what is pre-loaded with the examples, you h
             }],
             enableTracking: true
           }
-     }`
+   }```
 
 You would then call the following in your view:
 `<%= rsocialize_js_tag(@js_custom_options) %>`

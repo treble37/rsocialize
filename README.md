@@ -52,7 +52,46 @@ You would use "example2", "example3", etc. as an argument to each helper if you 
 
 ## Advanced Usage with Custom Options
 
-Coming soon...
+To use social buttons different than what is pre-loaded with the examples, you have to perform the following steps:
+1.  Specify your own (nested) hash of custom options to pass into *_js_tag so that the proper jQuery code is returned in your view
+2.  Specify your own html `<div>` markup for the jQuery code to operate on
+3.  Overwrite the css code in the rsocialize.css file for any custom css styling you want to be applied
+
+###For step 1 - example of specifying the hash of options
+`@js_custom_options = {
+        demo1: {
+          share: {
+              googlePlus: true,
+              facebook: true,
+              twitter: true
+            },
+            buttons: {
+              googlePlus: {size: 'tall'},
+              facebook: {layout: 'box_count'},
+              twitter: {count: 'vertical', via: '_JulienH'}
+            },
+            hover: %Q[function(api, options){
+              $(api.element).find('.buttons').show();
+            }],
+            hide: %Q[function(api, options){
+              $(api.element).find('.buttons').hide();
+            }],
+            enableTracking: true
+          }
+     }`
+
+You would then call the following in your view:
+`<%= rsocialize_js_tag(@js_custom_options) %>`
+
+###For step 2 - example of specifying own html `<div>` markup for the jQuery code to operate on
+ `@custom_div = %Q{
+        <div id="demo1" data-url="http://sharrre.com" data-text="Make your sharing widget with Sharrre (jQuery Plugin)" data-title="share"></div>
+     }`
+     
+You would then call the following in your view:
+`rsocialize_div_tag(@custom_div,:div_template=>"custom") %>`
+
+###For step 3 - verwrite the css code in the rsocialize.css file for any custom css styling you want to be applied
 
 ## Contributing
 

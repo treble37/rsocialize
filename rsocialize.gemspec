@@ -5,7 +5,7 @@ Gem::Specification.new do |gem|
   gem.authors       = ["Bruce Park"]
   gem.email         = ["bruce@binarywebpark.com"]
   gem.description   = %q{Provides a simple way to add social media buttons to your rails application}
-  gem.summary       = %q{Provides a simple way to add social media buttons to your rails application}
+  gem.summary       = %q{Provides a simple way to add social media buttons to your rails application.  It's a ruby wrapper for the sharrre jQuery plugin.'}
   gem.homepage      = ""
   
   #gem.files         = `git ls-files`.split($\)

@@ -8,4 +8,4 @@ gem 'activesupport', '~>3.2.8'
 gem 'nokogiri', '~>1.5.5'
 gem 'actionpack', '~>3.2.8'
 gem 'rake','~>0.9.2.2'
-
+gem 'gemcutter', '~>0.7.1' #needed to add yank command to rubygems command list

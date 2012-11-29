@@ -2,6 +2,7 @@ require "rsocialize/version"
 require "action_view"
 module Rsocialize
   require 'rsocialize/engine' if defined?(Rails)
+  JQUERY_SHARRRE_FILE = "jquery.sharrre-1.3.4.min.js"
   EXAMPLE1_JS_OPTIONS = {
     :twitter=>{:share=>{:twitter=>true},:enableHover=>false, :enableTracking=>true, :buttons=>{:twitter=>{:via=>'_JulienH'}},:click=>%Q[function(api, options){
     api.simulateClick();

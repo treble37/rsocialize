@@ -1,5 +1,6 @@
 require 'rails/generators'
 module Rsocialize
+  JQUERY_SHARRRE_FILE = "jquery.sharrre-1.3.4.min.js"
   class InstallGenerator < Rails::Generators::Base
     #rails g rsocialize:install example1
     argument :css_layout_name, :type => :string, :default => "example1"  
@@ -13,7 +14,7 @@ module Rsocialize
       copy_file 'example5.css', 'app/assets/stylesheets/example5css.txt'
       copy_file 'example6.css', 'app/assets/stylesheets/example6css.txt'
       copy_file 'rsocialize.css', 'app/assets/stylesheets/rsocialize.css'
-      copy_file 'jquery.sharrre-1.3.2.js', 'app/assets/javascripts/jquery.sharrre-1.3.2.js'
+      copy_file JQUERY_SHARRRE_FILE, 'app/assets/javascripts/#{JQUERY_SHARRRE_FILE}'
       copy_file 'rsocialize_controller.rb', 'app/lib/rsocialize_controller.rb'
       directory 'images', 'app/assets/images'
     end

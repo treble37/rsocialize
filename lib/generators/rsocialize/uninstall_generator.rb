@@ -12,7 +12,7 @@ module Rsocialize
       remove_file 'app/assets/stylesheets/example5css.txt'
       remove_file 'app/assets/stylesheets/example6css.txt'
       remove_file 'app/assets/stylesheets/rsocialize.css'
-      remove_file 'app/assets/javascripts/jquery.sharrre-1.3.2.js'
+      remove_file 'app/assets/javascripts/#{JQUERY_SHARRRE_FILE}'
       remove_file 'app/lib/rsocialize_controller.rb'
       remove_file 'app/assets/images'
     end

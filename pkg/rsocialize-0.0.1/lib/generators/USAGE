@@ -1,5 +1,0 @@
-Description:
-    Copies all the needed CSS files into your app's asset pipeline
-
-Example:
-    rails generate rsocialize

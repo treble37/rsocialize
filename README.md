@@ -58,8 +58,8 @@ At the command prompt:
 ## Advanced Usage with Custom Options
 
 To use social buttons different than what is pre-loaded with the examples, you have to perform the following steps:
-1.  Specify your own (nested) hash of custom options to pass into *_js_tag so that the proper jQuery code is returned in your view
-2.  Specify your own html `<div>` markup for the jQuery code to operate on
+1.  Specify your own (nested) hash of custom options to pass into rsocialize_js_tag so that the proper jQuery code is returned in your view
+2.  Specify your own html `<div>` markup for the jQuery code to operate on, which should be passed into rsocialize_div_tag
 3.  Overwrite the css code in the rsocialize.css file for any custom css styling you want to be applied
 
 ###For step 1 - example of specifying the hash of options
@@ -116,3 +116,7 @@ Note that the argument "example2" refers to the "example2css.txt" file in the "a
 3. Commit your changes (`git commit -am 'Added some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
+
+##Resources Used:
+1.  [Javascript compression tool http://jscompress.com/](http://jscompress.com/)
+2.  [Sharrre home page](http://sharrre.com/)

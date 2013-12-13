@@ -120,3 +120,7 @@ Note that the argument "example2" refers to the "example2css.txt" file in the "a
 ##Resources Used:
 1.  [Javascript compression tool http://jscompress.com/](http://jscompress.com/)
 2.  [Sharrre home page](http://sharrre.com/)
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/treble37/rsocialize/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+

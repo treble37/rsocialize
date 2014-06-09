@@ -6,7 +6,7 @@ This is a ruby on rails gem that enables easy installation of the [sharrre](http
 
 This gem is ideal for one-person (or severely time-pressed) startups who are time-limited and just need to get some social media buttons installed quickly, because they're really busy working on so many other aspects of deployment.
 
-#Rsocialize v0.0.3 - What's working?
+#Rsocialize v0.0.4 - What's working?
 
 This is a "beta" release.  There's been some minimal testing with rspec.  In the current version, I have examples 1,2,3,5 and 6 from the sharrre plugin working in Rails.  Users can use their own custom css and specify their own sharrre options to use different buttons than the ones given in examples 1,2,3,5,6.
 

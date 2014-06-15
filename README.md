@@ -1,5 +1,10 @@
 [![Code Climate](https://codeclimate.com/github/treble37/rsocialize.png)](https://codeclimate.com/github/treble37/rsocialize)  [![Code Climate](https://codeclimate.com/github/treble37/coverage.png)](https://codeclimate.com/github/treble37/rsocialize)
 
+##Help contribute to the development & maintenance of this gem via GitTip:
+[![Fund me on Gittip](https://www.gittip.com/assets/7.0.8/logo.png)](https://www.gittip.com/treble37/)
+
+Hey Internet, I make most of my money during the day by working just like everyone else, so seeing a donation really helps motivate me to keep improving this gem.  Even if you don't donate, please feel free to leave me feedback / feature requests / issues via the Github issues.
+
 # Rsocialize Description
 
 This is a ruby on rails gem that enables easy installation of the [sharrre](http://sharrre.com/) jQuery plugin.  It provides a simple way to add social media buttons to your rails application.  No more digging through APIs or copying and pasting code from developer docs just to install social media buttons for your rails application.

@@ -1,3 +1,5 @@
+[![Code Climate](https://codeclimate.com/github/treble37/rsocialize.png)](https://codeclimate.com/github/treble37/rsocialize)  [![Code Climate](https://codeclimate.com/github/treble37/coverage.png)](https://codeclimate.com/github/treble37/rsocialize)
+
 # Rsocialize Description
 
 This is a ruby on rails gem that enables easy installation of the [sharrre](http://sharrre.com/) jQuery plugin.  It provides a simple way to add social media buttons to your rails application.  No more digging through APIs or copying and pasting code from developer docs just to install social media buttons for your rails application.
@@ -12,11 +14,22 @@ This is a "beta" release.  There's been some minimal testing with rspec.  In the
 
 #Rails compatibility
 
-I wrote this gem and tested it with Rails 3.2.8. It takes advantage of the asset pipeline.  I'm thinking about making it compatible with other versions of rails, so if you're interested in this happening, let me know via the issue queue.
+##Rails 3.x
+
+I initially wrote this gem and tested it with Rails 3.2.8. It takes advantage of the asset pipeline.  Now that Rails 4.x is out, a few things that worked with Rails 3.2.x are incompatible and so I have moved the Rails 3 compatible code to the rails-3.x branch.
+
+##Rails 4.x
+A few dependencies were out of date - namely, activesupport, nokogiri, and actionpack.  Also, there was an issue with the way the route was specified in that Rails 4 apparently no longer allows [controller names to be capitalized in the routes file](https://github.com/rails/rails/blob/v4.0.0/actionpack/lib/action_dispatch/routing/mapper.rb#L237)
 
 ## Installation
 
 Add this line to your application's Gemfile:
+
+###For Rails 3
+
+    gem 'rsocialize', :git => "git://github.com//treble37/rsocialize.git", :branch => "rails-3.x"
+
+###For Rails 4
 
     gem 'rsocialize'
 

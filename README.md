@@ -26,6 +26,8 @@ I initially wrote this gem and tested it with Rails 3.2.8. It takes advantage of
 ##Rails 4.x
 A few dependencies were out of date - namely, activesupport, nokogiri, and actionpack.  Also, there was an issue with the way the route was specified in that Rails 4 apparently no longer allows [controller names to be capitalized in the routes file](https://github.com/rails/rails/blob/v4.0.0/actionpack/lib/action_dispatch/routing/mapper.rb#L237)
 
+The master branch always incorporates the latest branch updates (e.g., so if rails-4.1-stable is the latest branch, then master mirrors rails-4.1-stable)
+
 ## Installation
 
 Add this line to your application's Gemfile:

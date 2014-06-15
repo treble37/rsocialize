@@ -19,8 +19,8 @@ Gem::Specification.new do |gem|
   gem.require_paths = ["lib"]
   gem.version       = Rsocialize::VERSION
   
-  gem.add_development_dependency "rspec","~>2.11.0"
-  gem.add_development_dependency "rake","~>0.9.2.2"
+  gem.add_development_dependency "rspec",">=2.11.0"
+  gem.add_development_dependency "rake",">=0.9.2.2"
   gem.add_runtime_dependency "curb", "~>0.8.2"
   gem.add_runtime_dependency "activesupport", ">= 3.2.8"
   gem.add_runtime_dependency "nokogiri", ">= 1.5.5"

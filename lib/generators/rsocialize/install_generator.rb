@@ -26,7 +26,7 @@ module Rsocialize
     def modify_routes
       line = "::Application.routes.draw do"
       gsub_file 'config/routes.rb', /(#{Regexp.escape(line)})/mi do |match|
-        %Q{#{match}\n  match '/sharrre' => 'rsocialize#sharrre'}
+        %Q{#{match}\n  match '/sharrre' => 'rsocialize#sharrre, via: :get'}
       end
     end
   end #end class InstallGenerator 

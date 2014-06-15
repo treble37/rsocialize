@@ -17,7 +17,7 @@ module Rsocialize
       remove_file 'app/assets/images'
     end
     def unmodify_routes
-      line = %Q{match '/sharrre' => 'rsocialize#sharrre'}
+      line = %Q{match '/sharrre' => 'rsocialize#sharrre, via: :get'}
       gsub_file 'config/routes.rb', /(#{Regexp.escape(line)})/mi,''
     end
   end #class UninstallGenerator

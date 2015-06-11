@@ -2,7 +2,7 @@
 
 ##Help contribute to the development & maintenance of this gem via GitTip:
 
-+[![Gratipay](https://img.shields.io/gratipay/treble37.svg)](https://gratipay.com/treble37/)
+[![Gratipay](https://img.shields.io/gratipay/treble37.svg)](https://gratipay.com/treble37/)
 
 Hey Internet, I make most of my money during the day by working just like everyone else, so seeing a donation really helps motivate me to keep improving this gem.  Even if you don't donate, please feel free to leave me feedback / feature requests / issues via the Github issues.
 

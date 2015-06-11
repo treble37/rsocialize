@@ -1,7 +1,8 @@
-[![Code Climate](https://codeclimate.com/github/treble37/rsocialize.png)](https://codeclimate.com/github/treble37/rsocialize)  [![Code Climate](https://codeclimate.com/github/treble37/coverage.png)](https://codeclimate.com/github/treble37/rsocialize)
+[![Code Climate](https://codeclimate.com/github/treble37/rsocialize/badges/gpa.svg)](https://codeclimate.com/github/treble37/rsocialize)
 
 ##Help contribute to the development & maintenance of this gem via GitTip:
-[![Fund me on Gittip](https://www.gittip.com/assets/7.0.8/logo.png)](https://www.gittip.com/treble37/)
+
++[![Gratipay](https://img.shields.io/gratipay/treble37.svg)](https://gratipay.com/treble37/)
 
 Hey Internet, I make most of my money during the day by working just like everyone else, so seeing a donation really helps motivate me to keep improving this gem.  Even if you don't donate, please feel free to leave me feedback / feature requests / issues via the Github issues.
 

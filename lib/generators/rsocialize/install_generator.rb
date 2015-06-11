@@ -16,6 +16,7 @@ module Rsocialize
       copy_file %Q{#{Rsocialize::JQUERY_SHARRRE_FILE}}, %Q{app/assets/javascripts/#{Rsocialize::JQUERY_SHARRRE_FILE}}
       copy_file 'rsocialize_controller.rb', 'app/lib/rsocialize_controller.rb'
       directory 'images', 'app/assets/images'
+      copy_file 'images/example6.png'
     end
     def modify_css
       css_path = "app/assets/stylesheets/"+"#{css_layout_name}css.txt"

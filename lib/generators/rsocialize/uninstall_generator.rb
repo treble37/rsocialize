@@ -14,7 +14,7 @@ module Rsocialize
       remove_file 'app/assets/stylesheets/rsocialize.css'
       remove_file %Q{app/assets/javascripts/#{Rsocialize::JQUERY_SHARRRE_FILE}}
       remove_file 'app/lib/rsocialize_controller.rb'
-      remove_file 'app/assets/images'
+      remove_file 'app/assets/images/example6.png'
     end
     def unmodify_routes
       line = %Q{match '/sharrre' => 'rsocialize#sharrre', via: :get}

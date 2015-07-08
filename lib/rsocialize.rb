@@ -1,5 +1,6 @@
 require "rsocialize/version"
 require "action_view"
+require 'div_template'
 module Rsocialize
   require 'rsocialize/engine' if defined?(Rails)
   JQUERY_SHARRRE_FILE = "jquery.sharrre-1.3.5.min.js"
@@ -120,51 +121,20 @@ module Rsocialize
       :twitter=>{:url=>"http://sharrre.com/", :text=>"Make your sharing widget with Sharrre (jQuery Plugin)", :title=>"Tweet"},
      :div_template=>"example1", :url=>"http://sharrre.com/", :text=>"Make your sharing widget with Sharrre (jQuery Plugin)", :title=>"share this page"}.merge(options)
   
-    data_url = options[:url]
-    data_text = options[:text]
-    data_title = options[:title]
-    div_str = "".html_safe
-    case options[:div_template]
-    when "example1"
-      div_str = %Q{
-        <div id="example1">
-          <div id="twitter" data-url="#{options[:twitter][:url]}" data-text="#{options[:twitter][:text]}" data-title="#{options[:twitter][:title]}"></div>
-          <div id="facebook" data-url="#{options[:facebook][:url]}" data-text="#{options[:facebook][:text]}" data-title="#{options[:facebook][:title]}"></div>
-          <div id="googleplus" data-url="#{options[:googleplus][:url]}" data-text="#{options[:googleplus][:text]}" data-title="#{options[:googleplus][:title]}"></div>
-      </div>
-      }.html_safe
-    when "example2", "example5"
-      div_str = %Q{
+    div_str = if !(options[:div_template]=~/example[12356]/).nil?
+      klass = options[:div_template].slice(0,1).capitalize + options[:div_template].slice(1..-1)
+      klass.constantize.new(options).div_str
+    elsif div_tag_str.empty?  #assume empty or custom
+       #use template <div>
+      %Q{
         <div id="#{options[:div_template]}">
-          <div id="shareme" data-url="#{data_url}" data-text="#{data_text}"></div>
-        </div>
-      }.html_safe
-    when "example3"
-      div_str = %Q{
-        <div id="example3">
-          <div id="shareme" data-url="#{data_url}" data-text="#{data_text}" data-title="#{data_title}"></div>
-        </div>
-      }.html_safe   
-    when "example6"
-      div_str = %Q{
-        <div id="example6">
-          <div id="twitter" data-url="#{options[:twitter][:url]}" data-text="#{options[:twitter][:text]}"></div>
-          <div id="facebook" data-url="#{options[:facebook][:url]}" data-text="#{options[:facebook][:text]}"></div>
-          <div id="googleplus" data-url="#{options[:googleplus][:url]}" data-text="#{options[:googleplus][:text]}"></div>
-      </div>
-      }.html_safe
-    else #assume empty or custom
-      if (div_tag_str.empty?) #use template <div>
-       div_str = %Q{
-        <div id="#{options[:div_template]}">
-          <div id="twitter" data-url="#{data_url}" data-text="#{data_text}" data-title="Tweet"></div>
-          <div id="facebook" data-url="#{data_url}" data-text="#{data_text}" data-title="Like"></div>
-          <div id="googleplus" data-url="#{data_url}" data-text="#{data_text}" data-title="+1"></div>
+          <div id="twitter" data-url="#{options[:url]}" data-text="#{options[:text]}" data-title="Tweet"></div>
+          <div id="facebook" data-url="#{options[:url]}" data-text="#{options[:text]}" data-title="Like"></div>
+          <div id="googleplus" data-url="#{options[:url]}" data-text="#{options[:text]}" data-title="+1"></div>
        </div> 
      }.html_safe
-      else  #use your own <div> classes
-        div_str = div_tag_str.html_safe
-      end
+    else  #use your own <div> classes
+      div_tag_str.html_safe
     end
     
     return div_str

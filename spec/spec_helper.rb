@@ -1,8 +1,9 @@
 require 'rubygems'
 require 'bundler/setup'
+require 'pry'
 require 'rsocialize'
 
 RSpec.configure do |config|
-  config.color_enabled = true
+  config.color = true
   config.formatter = 'documentation'
 end

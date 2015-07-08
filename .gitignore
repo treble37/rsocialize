@@ -16,3 +16,6 @@ capybara-*.html
 rerun.txt
 pickle-email-*.html
 .project
+.ruby-version
+.ruby-gemset
+Gemfile.lock

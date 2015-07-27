@@ -1,117 +1,10 @@
 require "rsocialize/version"
 require "action_view"
 require 'div_template'
+require 'example_options'
+
 module Rsocialize
   require 'rsocialize/engine' if defined?(Rails)
-  JQUERY_SHARRRE_FILE = "jquery.sharrre-1.3.5.min.js"
-  EXAMPLE1_JS_OPTIONS = {
-    :twitter=>{:share=>{:twitter=>true},:enableHover=>false, :enableTracking=>true, :buttons=>{:twitter=>{:via=>'_JulienH'}},:click=>%Q[function(api, options){
-    api.simulateClick();
-    api.openPopup('twitter');}  ]
-    }, 
-    :facebook=>{:share=>{:facebook=>true}, :enableHover=>false, :enableTracking=>true, :click=>%Q[function(api, options){
-    api.simulateClick();
-    api.openPopup('facebook');}
-    ]
-    }, 
-    :googlePlus=>{:share=>{:googlePlus=>true},:enableHover=>false, :enableTracking=>true, :click=>%Q[function(api, options){
-    api.simulateClick();
-    api.openPopup('googlePlus');} ]
-    }
-  }
-  EXAMPLE2_JS_OPTIONS = {
-    shareme: {
-      share: {
-        twitter: true,
-        facebook: true,
-        googlePlus: true
-      },
-  template: %Q{<div class="box"><div class="left">Share</div><div class="middle"><a href="#" class="facebook">f</a><a href="#" class="twitter">t</a><a href="#" class="googleplus">+1</a></div><div class="right">{total}</div></div>},
-  enableHover: false,
-  enableTracking: true,
-  render: %Q[function(api, options){
-        $(api.element).on('click', '.twitter', function() {
-          api.openPopup('twitter');
-        });
-        $(api.element).on('click', '.facebook', function() {
-          api.openPopup('facebook');
-        });
-        $(api.element).on('click', '.googleplus', function() {
-          api.openPopup('googlePlus');
-        });
-      }]
-    }
-  }
-  EXAMPLE3_JS_OPTIONS = {
-    shareme: {
-      share: {
-        googlePlus: true,
-        facebook: true,
-        twitter: true,
-        digg: true,
-        delicious: true
-      },
-      enableTracking: true,
-      buttons: {
-        googlePlus: {size: 'tall'},
-        facebook: {layout: 'box_count'},
-        twitter: {count: 'vertical'},
-        digg: {type: 'DiggMedium'},
-        delicious: {size: 'tall'}
-      },
-      hover: %Q[function(api, options){
-        $(api.element).find('.buttons').show();
-      }],
-      hide: %Q[function(api, options){
-        $(api.element).find('.buttons').hide();
-      }]
-    }
-  }
-  EXAMPLE5_JS_OPTIONS = {
-    shareme: {
-      share: {
-        googlePlus: true, 
-        facebook: true,
-        twitter: true,
-        digg: true,
-        delicious: true,
-        stumbleupon: true,
-        linkedin: true,
-        pinterest: true
-      },
-      buttons: {
-        googlePlus: {size: 'tall'},
-        facebook: {layout: 'box_count'},
-        twitter: {count: 'vertical'},
-        digg: {type: 'DiggMedium'},
-        delicious: {size: 'tall'},
-        stumbleupon: {layout: '5'},
-        linkedin: {counter: 'top'},
-        pinterest: {media: 'http://sharrre.com/img/example1.png', description: %Q{$('#shareme').data('text'), layout: 'vertical'}}
-        },
-        enableHover: false,
-        enableCounter: false,
-        enableTracking: true
-      }
-  }
-  
-  EXAMPLE6_JS_OPTIONS ={
-  :twitter=>{:share=>{:twitter=>true},:template=>%Q{<a class="box" href="#"><div class="count" href="#">{total}</div><div class="share"><span></span>Tweet</div></a>},  :enableHover=>false, :enableTracking=>true, :buttons =>{ twitter: {via: '_JulienH'}}, :click=>%Q[function(api, options){
-    api.simulateClick();
-    api.openPopup('twitter');}
-    ]
-  }, 
-  :facebook=> {:share=>{:facebook=>true},:template=>%Q{<a class="box" href="#"><div class="count" href="#">{total}</div><div class="share"><span></span>Like</div></a>}, :enableHover=>false, :enableTracking=>true, :click=>%Q[function(api, options){
-    api.simulateClick();
-    api.openPopup('facebook');}
-    ] 
-  }, 
-  :googlePlus=>{:share=>{:googlePlus=>true},:template=>%Q{<a class="box" href="#"><div class="count" href="#">{total}</div><div class="share"><span></span>+1</div></a>}, :enableHover=>false, :enableTracking=>true, :click=>%Q[function(api, options){
-    api.simulateClick();
-    api.openPopup('googlePlus');}
-    ]
-  } 
-}
   def rsocialize_div_tag(div_tag_str="", options={})
     #options{} :=
      # url: http://www.example.com/
@@ -139,26 +32,17 @@ module Rsocialize
     
     return div_str
   end
+
   def rsocialize_js_tag(options={})
-    case options[:js_template]
-    when "example1"
-      options = EXAMPLE1_JS_OPTIONS
-    when "example2"
-      options = EXAMPLE2_JS_OPTIONS
-    when "example3"
-      options = EXAMPLE3_JS_OPTIONS
-    when "example5"
-      options = EXAMPLE5_JS_OPTIONS
-    when "example6"
-      options = EXAMPLE6_JS_OPTIONS
-    end
+    options = Object.const_get(options[:js_template].upcase + "_JS_OPTIONS") if options[:js_template]=~/example\d{1}/
     options=options.merge(options)
     
     js_str = "<script>\n".html_safe
-    js_str = js_str+rsocialize_build_js(options).html_safe
+    js_str = js_str + rsocialize_build_js(options).html_safe
     js_str += "</script>".html_safe
     return js_str
   end
+
   def rsocialize_build_js(options={})
     @debug_str = ""
     @js_str = "$(document).ready(function() { "
@@ -174,6 +58,7 @@ module Rsocialize
     @js_str = @js_str + "});" 
     return @js_str
   end
+
   def recursive_js_build(options, key, button_val) 
     @retval=%Q{#{key.to_s}: }
     @retval = @retval+"{" if hash_depth(options[key])>0
@@ -199,6 +84,7 @@ module Rsocialize
     end
     return @retval
   end
+
   def hash_depth(bhash)
     #return depth of hash as an integer
     return 0 if !bhash.is_a?(Hash) #no hash = 0

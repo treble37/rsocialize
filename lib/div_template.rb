@@ -20,18 +20,9 @@ class Example1 < DivTemplate
   end
 end
 
-class Example2 < DivTemplate
-  def div_str
-    %Q{
-      <div id="#{options[:div_template]}">
-        <div id="shareme" data-url="#{options[:url]}" data-text="#{options[:text]}"></div>
-      </div>
-    }.html_safe
-  end
-end
-
-class Example5 < DivTemplate
-  def div_str
+[2, 5].each do |i|
+  klass = Object.const_set("Example#{i}", Class.new(DivTemplate))
+  klass.send(:define_method, "div_str") do |*args|
     %Q{
       <div id="#{options[:div_template]}">
         <div id="shareme" data-url="#{options[:url]}" data-text="#{options[:text]}"></div>

@@ -1,5 +1,7 @@
 [![Code Climate](https://codeclimate.com/github/treble37/rsocialize/badges/gpa.svg)](https://codeclimate.com/github/treble37/rsocialize)
 
+[![Test Coverage](https://codeclimate.com/github/treble37/rsocialize/badges/coverage.svg)](https://codeclimate.com/github/treble37/rsocialize/coverage)
+
 ##Help contribute to the development & maintenance of this gem via GitTip:
 
 [![Gratipay](https://img.shields.io/gratipay/treble37.svg)](https://gratipay.com/treble37/)

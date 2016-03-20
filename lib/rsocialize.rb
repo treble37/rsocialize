@@ -5,6 +5,8 @@ require 'example_options'
 
 module Rsocialize
   require 'rsocialize/engine' if defined?(Rails)
+  JQUERY_SHARRRE_FILE = "jquery.sharrre-1.3.5.min.js"
+
   def rsocialize_div_tag(div_tag_str="", options={})
     #options{} :=
      # url: http://www.example.com/
